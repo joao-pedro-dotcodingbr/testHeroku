@@ -1,13 +1,17 @@
 var  Sniffr  = require("sniffr") ; 
-var os = require("os");
+const UserAgent = require("user-agents")
+const userAgent = new UserAgent();
+var  s  = new Sniffr(); 
+s.sniff(userAgent.toString())
+
 const express = require('express')
 const app = express();
 app.use(express.json());
 
 app.get('/', (req, res, next) => {
     try {
-        var  s  = new Sniffr(); 
-        res.status(200).json({plataform: os.platform(), arch:os.arch()})
+     
+        res.status(200).json(s.os)
     } catch (error) {
         next(error)
     }
