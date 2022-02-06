@@ -7,7 +7,7 @@ app.use(express.json());
 app.get('/', (req, res, next) => {
     try {
         var  s  = new Sniffr(); 
-        res.status(200).json(os)
+        res.status(200).json({plataform: os.platform(), arch:os.arch()})
     } catch (error) {
         next(error)
     }
