@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "express": "^4.17.2",
+    "sniffr": "^1.2.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "testheroku",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joao-pedro-dotcodingbr/testHeroku.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joao-pedro-dotcodingbr/testHeroku/issues"
+  },
+  "homepage": "https://github.com/joao-pedro-dotcodingbr/testHeroku#readme"
+}
