@@ -1,12 +1,13 @@
 var  Sniffr  = require("sniffr") ; 
-var  s  = new Sniffr(); 
+var os = require("os");
 const express = require('express')
 const app = express();
 app.use(express.json());
 
 app.get('/', (req, res, next) => {
     try {
-        res.status(200).json(Sniffr.os.name)
+        var  s  = new Sniffr(); 
+        res.status(200).json(os)
     } catch (error) {
         next(error)
     }
