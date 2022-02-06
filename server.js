@@ -1,8 +1,4 @@
-var  Sniffr  = require("sniffr") ; 
-const UserAgent = require("user-agents")
-const userAgent = new UserAgent();
-var  s  = new Sniffr(); 
-s.sniff(userAgent.toString())
+
 const agentExpress = require('express-useragent')
 const express = require('express')
 const app = express();
@@ -11,8 +7,12 @@ app.use(agentExpress.express());
 
 app.get('/', (req, res, next) => {
     try {
-     
-        res.status(200).json(req.useragent.isMobile)
+      const result ={
+            android: req.useragent.isAndroid,
+            ois: req.useragent.isiPhone,
+            windows: req.useragent.isWindows,
+        }
+       return res.status(200).json({message: 'Dados retornados', result})
     } catch (error) {
         next(error)
     }
