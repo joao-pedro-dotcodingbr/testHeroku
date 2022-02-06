@@ -6,7 +6,7 @@ app.use(express.json());
 
 app.get('/', (req, res, next) => {
     try {
-        res.status(200).json(s.os.name)
+        res.status(200).json(Sniffr.os.name)
     } catch (error) {
         next(error)
     }
